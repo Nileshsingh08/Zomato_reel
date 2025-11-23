@@ -1,4 +1,5 @@
-# Logs
+cd C:\React_Project
+git init# Logs
 logs
 *.log
 npm-debug.log*
