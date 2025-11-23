@@ -1,0 +1,385 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.create-food-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.create-food-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  width: 100%;
+  max-width: 500px;
+  animation: slideUp 0.3s ease-out;
+  margin: 20px auto;
+  max-height: 85vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.create-food-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.create-food-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ============================================
+   FORM GROUPS & LABELS
+   ============================================ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   VIDEO UPLOAD SECTION
+   ============================================ */
+
+.video-upload-wrapper {
+  position: relative;
+  width: 100%;
+  pointer-events: auto;
+}
+
+.video-upload-label {
+  display: block;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.video-input {
+  display: none;
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  border: 2px dashed #667eea;
+  border-radius: 12px;
+  background: #f8f9ff;
+  transition: all 0.3s ease;
+}
+
+.upload-placeholder:hover {
+  background: #f0f2ff;
+  border-color: #764ba2;
+  transform: scale(1.02);
+}
+
+.upload-placeholder:active {
+  transform: scale(0.98);
+}
+
+.upload-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.upload-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.upload-subtext {
+  font-size: 12px;
+  color: #999;
+}
+
+/* ============================================
+   VIDEO PREVIEW
+   ============================================ */
+
+.video-preview-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-preview {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.clear-video-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 0, 0, 0.85);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.clear-video-btn:hover {
+  background: rgba(255, 0, 0, 1);
+  transform: scale(1.1);
+}
+
+.clear-video-btn:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   FORM INPUTS
+   ============================================ */
+
+.form-input,
+.form-textarea {
+  padding: 12px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+  pointer-events: auto;
+  cursor: text;
+  width: 100%;
+  color: #1a1a1a;
+  z-index: 10;
+  position: relative;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background: #fafbff;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #ccc;
+}
+
+.form-textarea {
+  resize: vertical;
+  font-family: inherit;
+  min-height: 100px;
+}
+
+/* ============================================
+   MESSAGE ALERTS
+   ============================================ */
+
+.message {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* ============================================
+   SUBMIT BUTTON
+   ============================================ */
+
+.submit-btn {
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 480px) {
+  .create-food-container {
+    padding: 12px;
+    min-height: 100dvh;
+  }
+
+  .create-food-card {
+    padding: 20px;
+    border-radius: 16px;
+    max-width: 100%;
+  }
+
+  .create-food-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .form-textarea {
+    min-height: 90px;
+  }
+
+  .submit-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .upload-placeholder {
+    padding: 30px 16px;
+  }
+
+  .upload-icon {
+    font-size: 40px;
+  }
+
+  .upload-text {
+    font-size: 14px;
+  }
+
+  .upload-subtext {
+    font-size: 11px;
+  }
+
+  .video-preview {
+    max-height: 250px;
+  }
+
+  .form-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .create-food-card {
+    padding: 16px;
+  }
+
+  .create-food-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .create-food-form {
+    gap: 16px;
+  }
+
+  .upload-placeholder {
+    padding: 24px 12px;
+  }
+
+  .upload-icon {
+    font-size: 32px;
+  }
+
+  .video-preview {
+    max-height: 200px;
+  }
+}

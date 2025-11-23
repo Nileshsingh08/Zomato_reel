@@ -1,0 +1,17 @@
+:root {
+  --color-bg: #f9f9f9;
+  --color-text: #222;
+  --color-primary: #4f8cff;
+  --color-border: #e0e0e0;
+  --color-card: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #181a1b;
+    --color-text: #f9f9f9;
+    --color-primary: #4f8cff;
+    --color-border: #333;
+    --color-card: #232526;
+  }
+}
